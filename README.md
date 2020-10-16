@@ -12,10 +12,9 @@ If you don't have pip yet, install it using the following code:
     sudo apt install python3-pip
 
 Non-root users may need to set up a virtual environment. 
-With the pip function ready, we can use it to download Keras and Tensorflow:
+With the pip function ready, we can use it to download Keras, Tensorflow and Matplotlib with the requirement text file:
 
-    pip install keras
-    pip install tensorflow
+    pip3 install -r requirement.txt
 
-Note that Keras and Tensorflow may also load some dependent components, dependencies, if they aren't found on your system. Keras itself is one of the dependencies of Tensorflow 2.0, so the command `pip install tensorflow` should be sufficient. 
-Lastly, you need to install MatPlotLib with `pip install matplotlib`.
+Note that those packages may also load some dependent components, dependencies, if they aren't found on your system.
+

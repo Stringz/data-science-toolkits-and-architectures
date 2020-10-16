@@ -1,0 +1,3 @@
+install tensorflow
+install keras
+install matplotlib
