@@ -15,7 +15,7 @@ embedding_dims = 50
 filters = 250
 kernel_size = 3
 hidden_dims = 250
-epochs = 4
+epochs = 2
 
 print('Loading data...')
 (x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=max_features)
@@ -67,11 +67,14 @@ fit=model.fit(x_train, y_train,
 
 
 import matplotlib.pyplot as plt
-
+import numpy as np
+q=np.array([0,1])
+w=[1,2]
 plt.plot(fit.history['val_loss'])
 plt.title('Validation loss history')
 plt.ylabel('Loss value')
 plt.xlabel('No. epoch')
+plt.xticks(q,w)
 plt.show()
 
 # Plot history: Accuracy
@@ -79,5 +82,6 @@ plt.plot(fit.history['val_accuracy'])
 plt.title('Validation accuracy history')
 plt.ylabel('Accuracy value (%)')
 plt.xlabel('No. epoch')
+plt.xticks(q,w)
 plt.show()
 
