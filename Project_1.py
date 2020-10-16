@@ -15,7 +15,7 @@ embedding_dims = 50
 filters = 250
 kernel_size = 3
 hidden_dims = 250
-epochs = 2
+epochs = 4
 
 print('Loading data...')
 (x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=max_features)
@@ -60,7 +60,7 @@ model.add(Activation('sigmoid'))
 model.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
-fitPlot=model.fit(x_train, y_train,
+fit=model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
           validation_data=(x_test, y_test))
@@ -68,14 +68,14 @@ fitPlot=model.fit(x_train, y_train,
 
 import matplotlib.pyplot as plt
 
-plt.plot(fitPlot.history['val_loss'])
+plt.plot(fit.history['val_loss'])
 plt.title('Validation loss history')
 plt.ylabel('Loss value')
 plt.xlabel('No. epoch')
 plt.show()
 
 # Plot history: Accuracy
-plt.plot(fitPlot.history['val_accuracy'])
+plt.plot(fit.history['val_accuracy'])
 plt.title('Validation accuracy history')
 plt.ylabel('Accuracy value (%)')
 plt.xlabel('No. epoch')
